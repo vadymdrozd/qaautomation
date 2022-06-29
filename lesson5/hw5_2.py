@@ -3,9 +3,6 @@
 
 def float_convert(argument):
     try:
-        if isinstance(argument, bool):
-            raise ValueError
-        float_argument = float(argument)
-        return float_argument
-    except (TypeError, ValueError):
+        return float(argument)
+    except:
         return 0.0
