@@ -41,12 +41,12 @@ def test_dict_arg_type():
 
 
 def test_positive_float_convert():
-    for arg in (1, 1.0, '1.0'):
+    for arg in (1, 1.0, '1.0', True):
         assert float_convert(arg) == 1.0
 
 
 def test_negative_float_convert():
-    for arg in ('asdf', {1: 3}, (1, 2), [2, 3, 4], {1, 2, 3}, None, True):
+    for arg in ('asdf', {1: 3}, (1, 2), [2, 3, 4], {1, 2, 3}, None, False):
         assert float_convert(arg) == 0.0
 
 
