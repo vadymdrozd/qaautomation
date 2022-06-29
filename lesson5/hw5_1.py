@@ -2,7 +2,6 @@
 # (для визначення типу використайте type)
 
 def arg_type(argument):
-    print(type(argument))
-
-
-arg_type()
+    val_type = type(argument)
+    print(val_type)
+    return val_type
