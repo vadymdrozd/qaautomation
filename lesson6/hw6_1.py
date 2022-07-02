@@ -39,20 +39,6 @@ def years_typer(age: int) -> str:
         return f'{age} років'
 
 
-def interesting_age(age: int) -> str:
-    """
-    Determines if a user age has is a repdigit (e.g. 11, 22, 111)
-    Args:
-        age: an int parameter from the input
-    Returns:
-        an 'f'-string with text and the repdigit, if it contains in the age, with text
-        determined according to the years_typer function output
-    """
-    str_age = str(age)
-    if 1 < len(str_age) == str_age.count(str_age[0]):
-        return f'О, вам {years_typer(age)}! Який цікавий вік!'
-
-
 def tickets_check(age: int) -> str:
     """
     Receives an int age parameter, defines a user's age and makes tickets check
@@ -62,13 +48,16 @@ def tickets_check(age: int) -> str:
         an 'f'-string with tickets check and the user's age with text determined
         according to the years_typer function output
     """
+    str_age = str(age)
+    if 1 < len(str_age) == str_age.count(str_age[0]):
+        return f'О, вам {years_typer(age)}! Який цікавий вік!'
     if age < 1:
         return 'Вибач, але так не може бути'
-    elif 1 <= age < 7:
+    if age < 7:
         return f'Тобі ж {years_typer(age)}! Де твої батьки?'
-    elif 7 <= age < 16:
+    if age < 16:
         return f'Тобі лише {years_typer(age)}, а цей фільм для дорослих!'
-    elif age >= 65:
+    if age >= 65:
         return f'Вам {years_typer(age)}? Покажіть пенсійне посвідчення!'
     else:
         return f'Незважаючи на те, що вам {years_typer(age)}, білетів все одно нема!'
@@ -78,7 +67,6 @@ while True:
     try:
         customer_age = int(input('Будь ласка, введіть ваш вік цілим числом: '))
         print(tickets_check(customer_age))
-        print(interesting_age(customer_age))
         break
     except ValueError as e:
         print('Вибачте, але те, що ви ввели, не є цілим числом. Будь ласка, спробуйте ще раз')
