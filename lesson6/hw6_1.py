@@ -61,12 +61,3 @@ def tickets_check(age: int) -> str:
         return f'Вам {years_typer(age)}? Покажіть пенсійне посвідчення!'
     else:
         return f'Незважаючи на те, що вам {years_typer(age)}, білетів все одно нема!'
-
-
-while True:
-    try:
-        customer_age = int(input('Будь ласка, введіть ваш вік цілим числом: '))
-        print(tickets_check(customer_age))
-        break
-    except ValueError as e:
-        print('Вибачте, але те, що ви ввели, не є цілим числом. Будь ласка, спробуйте ще раз')
