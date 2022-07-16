@@ -3,12 +3,12 @@
 
 
 def multiplication_on_two(argument):
-    return [arg * 2 for arg in argument]
+    return argument * 2
 
 
 def dividing_on_two(argument):
-    return [arg / 2 for arg in argument]
+    return argument / 2
 
 
 def pseudo_map(func, collection):
-    return func(collection)
+    return [func(arg) for arg in collection]
