@@ -21,7 +21,7 @@ class Vehicle:
 
     def refueling(self):
         refueled = self.tank_capacity - self.tank_level
-        self.tank_capacity = self.tank_level
+        self.tank_level = self.tank_capacity
         return f'There were {refueled} liters refueled'
 
     def race(self, race_distance):
@@ -33,7 +33,6 @@ class Vehicle:
         else:
             self.tank_level = 0
         self.odometer_value += travel_distance
-
         return {
                 'Race distance': travel_distance,
                 'Remaining fuel': self.tank_level,
@@ -57,4 +56,3 @@ class Vehicle:
 
     def __eq__(self, other):
         return self.odometer_value == other.odometer_value and self.year == other.year
-
