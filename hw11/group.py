@@ -1,4 +1,4 @@
-from lesson11_hw11.pupil import Pupil
+from hw11.pupil import Pupil
 
 
 class Group:

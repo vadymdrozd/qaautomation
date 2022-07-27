@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from lesson11_hw11.human import Human
+from hw11.human import Human
 
 
 class SchoolEmployee(Human, ABC):

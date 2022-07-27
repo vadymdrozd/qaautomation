@@ -1,4 +1,4 @@
-from lesson11_hw11.group import Group
+from hw11.group import Group
 from director import Director
 from head_teacher import HeadTeacher
 from teacher import Teacher

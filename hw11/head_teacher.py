@@ -1,4 +1,4 @@
-from lesson11_hw11.school_employee import SchoolEmployee
+from hw11.school_employee import SchoolEmployee
 
 
 class HeadTeacher(SchoolEmployee):
