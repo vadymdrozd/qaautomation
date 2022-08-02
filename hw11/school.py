@@ -84,7 +84,7 @@ class School:
         pupils_list = []
         for group in self.groups:
             for pupil in group.pupils:
-                pupils_list.append(pupil)
+                pupils_list.append(pupil.name + ' ' + pupil.surname)
         return pupils_list
 
     def get_head_teachers_cost(self):
