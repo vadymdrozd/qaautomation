@@ -8,7 +8,7 @@ class SchoolEmployee(Human, ABC):
                  surname: str,
                  age: int,
                  position: str,
-                 benefit):
+                 benefit: int):
         super().__init__(name, surname, age)
         self.position = position
         self.benefit = benefit
