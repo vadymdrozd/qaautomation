@@ -51,6 +51,10 @@ print(first_school.get_study_cost())
 # yana.get_benefit()
 # dina.get_benefit()
 # dina.get_benefit()
+# print(dina.sex)
+# print(yana.sex)
+# print(vasyl.sex)
+#
 #
 # print('Group average points')
 # print(first_school_group.get_group_average_points())

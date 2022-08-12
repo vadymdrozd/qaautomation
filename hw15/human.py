@@ -7,6 +7,7 @@ class Human:
     name: str
     surname: str
     age: int
+    _sex: int
 
     def __post_init__(self):
         if not isinstance(self.name, str):

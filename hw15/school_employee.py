@@ -8,6 +8,7 @@ class SchoolEmployee(Human, ABC):
     name: str
     surname: str
     age: int
+    _sex: int
     position: str
     benefit: int
     position: str
