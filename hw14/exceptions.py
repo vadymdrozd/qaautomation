@@ -1,0 +1,2 @@
+class LowMoneyException(Exception):
+    pass
