@@ -12,6 +12,9 @@ class Game(object):
 
         scores = [d.scores for d in self.dices]
 
+        if 0 in scores:
+            raise ValueError("0 can't be in scores")
+
         if scores.count(scores[0]) == 3:
             return scores[0] * 100
         elif scores.count(scores[0]) == 2:
