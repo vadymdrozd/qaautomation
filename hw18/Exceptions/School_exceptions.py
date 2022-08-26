@@ -1,0 +1,2 @@
+class DuplicatePupilError(Exception):
+    pass
