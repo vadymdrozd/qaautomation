@@ -12,8 +12,9 @@ class Game(object):
 
         scores = [d.scores for d in self.dices]
 
-        if 0 in scores:
-            raise ValueError("0 can't be in scores")
+        for value in scores:
+            if 1 > value or value > 6:
+                raise ValueError("Non-existent dice value is received")
 
         if scores.count(scores[0]) == 3:
             return scores[0] * 100
@@ -23,3 +24,10 @@ class Game(object):
             return scores[1] * 10
 
         return sum(scores)
+
+
+if __name__ == '__main__':
+    dice = Game()
+    print(dice.throw(1, 2, 3))
+    print(dice.throw(3, 3, 3))
+    print(dice.throw(7, 7, 7))
