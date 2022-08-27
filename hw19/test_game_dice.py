@@ -7,13 +7,13 @@ from game_dice import Game
 def pytest_generate_tests(metafunc):
     if 'negative' in metafunc.function.__name__:
         incorrect_test_data = tuple(
-            pandas.read_csv(Path('test_data', 'dice_incorrect_combinations.csv'), delimiter=",").itertuples(index=False,
-                                                                                                            name=None))
+            pandas.read_csv(Path('test_data', f'{metafunc.function.__name__}.csv'), delimiter=",").itertuples(index=False,
+                                                                                                              name=None))
         metafunc.parametrize("first, second, third", incorrect_test_data)
     elif 'positive' in metafunc.function.__name__:
         correct_test_data = tuple(
-            pandas.read_csv(Path('test_data', 'dice_correct_combinations.csv'), delimiter=",").itertuples(index=False,
-                                                                                                          name=None))
+            pandas.read_csv(Path('test_data', f'{metafunc.function.__name__}.csv'), delimiter=",").itertuples(index=False,
+                                                                                                              name=None))
         metafunc.parametrize("first, second, third, result", correct_test_data)
 
 
