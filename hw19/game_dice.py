@@ -25,9 +25,3 @@ class Game(object):
 
         return sum(scores)
 
-
-if __name__ == '__main__':
-    dice = Game()
-    print(dice.throw(1, 2, 3))
-    print(dice.throw(3, 3, 3))
-    print(dice.throw(7, 7, 7))
