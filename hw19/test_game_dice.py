@@ -1,0 +1,1 @@
+from game_dice import Game
