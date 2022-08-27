@@ -24,4 +24,3 @@ class Game(object):
             return scores[1] * 10
 
         return sum(scores)
-
