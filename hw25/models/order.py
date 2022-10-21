@@ -32,15 +32,11 @@ class Order(Base):
     @classmethod
     def change_order_status(cls, order_id, order_status: str) -> None:
         products_by_order_id = OrderProduct.get_all_by_order_id(order_id)
-        if order_status == "Canceled":
-            for ordered_product in products_by_order_id:
-                product = Product.get_product_by_id(ordered_product.product_id)
-                product.reserved_quantity -= ordered_product.quantity
+        for ordered_product in products_by_order_id:
+            product = Product.get_product_by_id(ordered_product.product_id)
+            product.reserved_quantity -= ordered_product.quantity
+            if order_status == "Canceled":
                 product.decrement_reserve(ordered_product.quantity)
-        elif order_status == "Processed":
-            for ordered_product in products_by_order_id:
-                product = Product.get_product_by_id(ordered_product.product_id)
-                product.reserved_quantity -= ordered_product.quantity
         order = Order.get_order_by_id(order_id=order_id)
         order.status = order_status
         session.commit()
