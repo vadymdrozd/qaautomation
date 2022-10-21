@@ -1,11 +1,13 @@
 from __future__ import annotations
 
-from sqlalchemy import (Column,
-                        String,
-                        Integer)
+from sqlalchemy import (
+    Column,
+    String,
+    Integer,
+)
 from sqlalchemy.orm import relationship
 
-from hw25.Exceptions.insufficient_amount import InsufficientAmountException
+from hw25.exceptions.insufficient_amount import InsufficientAmountException
 from hw25.core import session
 from hw25.models.base import Base
 
@@ -21,7 +23,7 @@ class Product(Base):
     orders_products = relationship("OrderProduct")
 
     @classmethod
-    def get_product_by_id(cls, product_id: str) -> Product:
+    def get_by_id(cls, product_id: str) -> Product:
         product = session.query(Product).get(product_id)
 
         return product
@@ -29,7 +31,7 @@ class Product(Base):
     def __str__(self):
         return f"{self.name} | {self.price} | {self.quantity} | {self.reserved_quantity}"
 
-    def add_product(self) -> None:
+    def insert(self) -> None:
         session.add(self)
         session.commit()
 

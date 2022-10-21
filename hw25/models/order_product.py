@@ -1,10 +1,12 @@
 from __future__ import annotations
 from typing import List
 
-from sqlalchemy import (Column,
-                        String,
-                        Integer,
-                        ForeignKey)
+from sqlalchemy import (
+    Column,
+    String,
+    Integer,
+    ForeignKey,
+)
 
 from hw25.core import session
 from hw25.models.product import Product
@@ -25,7 +27,7 @@ class OrderProduct(Base):
 
         return products_by_order_id
 
-    def create_order_product(self, product: Product, reserving_amount: int) -> None:
+    def insert(self, product: Product, reserving_amount: int) -> None:
         product.increment_reserve(reserving_amount=reserving_amount)
         session.add(self)
         session.commit()
